@@ -128,6 +128,7 @@ func performRequest(request *http.Request) (ResponseModel, error) {
 	if err != nil {
 		return responseModel, err
 	}
+	log.Infof("contents: %s", contents)
 
 	err = json.Unmarshal(contents, &responseModel)
 	return responseModel, err
